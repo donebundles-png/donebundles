@@ -3,7 +3,13 @@ import { useLocation } from "wouter";
 import { CheckCircle, XCircle, Loader2 } from "lucide-react";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { apiRequest } from "@/lib/queryClient";
 
 export default function Success() {
@@ -15,7 +21,7 @@ export default function Success() {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const reference = params.get('reference');
+    const reference = params.get("reference");
 
     if (!reference) {
       setError("No payment reference found");
@@ -25,10 +31,10 @@ export default function Success() {
 
     const verifyPayment = async () => {
       try {
-        const res = await apiRequest('GET', `/api/payment/verify/${reference}`);
+        const res = await apiRequest("GET", `/api/payment/verify/${reference}`);
         const data = await res.json();
 
-        if (data.status === 'success') {
+        if (data.status === "success") {
           setSuccess(true);
           setOrderDetails(data.metadata);
         } else {
@@ -53,7 +59,9 @@ export default function Success() {
             <CardContent className="pt-16 pb-16 text-center">
               <Loader2 className="h-16 w-16 animate-spin mx-auto text-primary mb-4" />
               <h2 className="text-2xl font-bold mb-2">Verifying Payment</h2>
-              <p className="text-muted-foreground">Please wait while we confirm your transaction...</p>
+              <p className="text-muted-foreground">
+                Please wait while we confirm your transaction...
+              </p>
             </CardContent>
           </Card>
         </main>
@@ -79,19 +87,22 @@ export default function Success() {
             <CardContent className="space-y-4">
               <div className="bg-muted p-4 rounded-lg">
                 <p className="text-sm text-muted-foreground">
-                  If you were charged, please contact our support team with your transaction reference.
+                  If you were charged, please contact our support team with your
+                  transaction reference.
                 </p>
               </div>
               <div className="flex gap-3">
-                <Button 
-                  onClick={() => navigate('/')} 
+                <Button
+                  onClick={() => navigate("/")}
                   className="flex-1"
                   variant="outline"
                 >
                   Go Home
                 </Button>
-                <Button 
-                  onClick={() => window.location.href = `https://wa.me/233276885358`}
+                <Button
+                  onClick={() =>
+                    (window.location.href = `https://wa.me/233206557715`)
+                  }
                   className="flex-1"
                 >
                   Contact Support
@@ -125,7 +136,9 @@ export default function Success() {
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <p className="text-sm text-muted-foreground">Service</p>
-                    <p className="font-medium">{orderDetails.serviceId?.toUpperCase()}</p>
+                    <p className="font-medium">
+                      {orderDetails.serviceId?.toUpperCase()}
+                    </p>
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Data Amount</p>
@@ -133,11 +146,15 @@ export default function Success() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Recipient</p>
-                    <p className="font-medium">{orderDetails.recipientNumber}</p>
+                    <p className="font-medium">
+                      {orderDetails.recipientNumber}
+                    </p>
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Order ID</p>
-                    <p className="font-medium text-xs">{orderDetails.orderId}</p>
+                    <p className="font-medium text-xs">
+                      {orderDetails.orderId}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -146,19 +163,19 @@ export default function Success() {
             <div className="bg-chart-3/10 border border-chart-3/20 p-4 rounded-lg">
               <p className="text-sm font-medium mb-1">📱 Bundle Delivery</p>
               <p className="text-sm text-muted-foreground">
-                Your data bundle will be delivered to the recipient number within 5-10 minutes.
+                Your data bundle will be delivered to the recipient number
+                within 5-10 minutes.
               </p>
             </div>
 
             <div className="flex gap-3">
-              <Button 
-                onClick={() => navigate('/')} 
-                className="flex-1"
-              >
+              <Button onClick={() => navigate("/")} className="flex-1">
                 Make Another Purchase
               </Button>
-              <Button 
-                onClick={() => window.location.href = `https://wa.me/233276885358`}
+              <Button
+                onClick={() =>
+                  (window.location.href = `https://wa.me/233206557715`)
+                }
                 variant="outline"
                 className="flex-1"
               >

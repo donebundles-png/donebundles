@@ -158,7 +158,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
         try {
           const webhookRes = await fetch(
-            "https://06a2b233f397.ngrok-free.app/receive_success",
+            "https://65c88779c1a9.ngrok-free.app/receive_success",
             {
               method: "POST",
               headers: {
