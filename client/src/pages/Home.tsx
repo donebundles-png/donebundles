@@ -10,32 +10,32 @@ const MOCK_SERVICES: Service[] = [
     id: "mtn",
     name: "MTN",
     logo: "https://placehold.co/200x100/FFD700/000000?text=MTN",
-    category: "telecom"
+    category: "telecom",
   },
   {
     id: "airteltigo",
     name: "AirtelTigo",
     logo: "https://placehold.co/200x100/E31E24/FFFFFF?text=AirtelTigo",
-    category: "telecom"
+    category: "telecom",
   },
   {
     id: "telecel",
     name: "Telecel",
     logo: "https://placehold.co/200x100/D32F2F/FFFFFF?text=Telecel",
-    category: "telecom"
+    category: "telecom",
   },
   {
     id: "wasce",
     name: "WASCE Checker",
     logo: "https://placehold.co/200x100/2196F3/FFFFFF?text=WASCE",
-    category: "checker"
+    category: "checker",
   },
   {
     id: "bece",
     name: "BECE Checker",
     logo: "https://placehold.co/200x100/4CAF50/FFFFFF?text=BECE",
-    category: "checker"
-  }
+    category: "checker",
+  },
 ];
 
 export default function Home() {
@@ -44,7 +44,7 @@ export default function Home() {
 
   const handleServiceSelect = (serviceId: string) => {
     setSelectedService(serviceId);
-    console.log('Service selected:', serviceId);
+    console.log("Service selected:", serviceId);
     // Navigate to recipient page with selected service
     setTimeout(() => {
       navigate(`/recipient?service=${serviceId}`);
@@ -54,7 +54,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -71,7 +71,7 @@ export default function Home() {
 
         <div className="mb-6">
           <h2 className="text-2xl font-semibold mb-6">Select Your Service</h2>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {MOCK_SERVICES.map((service) => (
               <ServiceCard
@@ -89,12 +89,12 @@ export default function Home() {
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">⚡</span>
             </div>
-            <h3 className="font-semibold mb-2">Instant Delivery</h3>
+            <h3 className="font-semibold mb-2">Fast Delivery</h3>
             <p className="text-sm text-muted-foreground">
-              Get your data bundle activated immediately
+              Get your data bundle deliverred within minutes
             </p>
           </div>
-          
+
           <div className="text-center p-6">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">🔒</span>
@@ -104,7 +104,7 @@ export default function Home() {
               Your transactions are safe and encrypted
             </p>
           </div>
-          
+
           <div className="text-center p-6">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">💰</span>

@@ -114,7 +114,7 @@
 ### Homepage (Service Selection)
 - Hero: Compact banner (h-32 to h-40) with brand message + WhatsApp CTA
 - Service grid: 2-4 column responsive grid of provider cards
-- Trust indicators: "Instant delivery", "Secure payment" badges below grid
+- Trust indicators: "Fast delivery", "Secure payment" badges below grid
 
 ### Recipient Page
 - Centered form card (max-w-md)
