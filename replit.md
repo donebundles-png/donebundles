@@ -33,10 +33,11 @@ Budget Bundles is a web application for purchasing affordable data bundles for v
 ```
 
 ## Recent Changes (October 15, 2025)
-- ✅ **Mobile Navigation Slider**: Added horizontal scrollable navigation for mobile screens
-  - Header now displays navigation links below logo on mobile devices
-  - Smooth horizontal scrolling with hidden scrollbar for clean UX
-  - Maintained desktop navigation layout unchanged
+- ✅ **Mobile Hamburger Menu**: Added slide-in navigation menu for mobile screens
+  - Hamburger menu button (three lines icon) appears on mobile devices
+  - Sliding sidebar menu from the right with navigation links
+  - Auto-closes when a link is clicked for smooth navigation
+  - Desktop navigation layout unchanged
 - ✅ **Package Data Updated**: Replaced mock packages with real pricing data
   - MTN: 14 packages (1GB - 50GB)
   - Telecel: 6 packages (10GB - 50GB)
